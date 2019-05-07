@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git+https://github.com/breadhead/use-query.git"
   },
-  "description": "React hook for easy working with query string",
+  "description": "React hook for easy work with query string",
   "author": "Daria Moreno-Gogoleva <iwanttobealight@yandex.ru>",
   "license": "MIT",
   "devDependencies": {
@@ -19,6 +19,12 @@
     "ts-jest": "^24.0.1",
     "typescript": "^3.4.1"
   },
+  "keywords": [
+    "react",
+    "react hook",
+    "query string",
+    "breadhead"
+  ],
   "peerDependencies": {
     "react": ">= 16.8",
     "react-dom": ">= 16.8"
