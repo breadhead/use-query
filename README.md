@@ -3,6 +3,7 @@
 A react hook for easy work with query string
 
 ## Installation
+
 `yarn add @breadhead/use-query`
 
 ## API
@@ -16,41 +17,58 @@ A react hook for easy work with query string
 ### Usage
 
 #### in App.js
+
 **regular**
 
 ```js
-/app.js
-import { QueryContextProvider } from '@breadhead/use-query'
+// app.js
+import { QueryContextProvider } from "@breadhead/use-query";
 
-    return (<QueryContextProvider initial={appContext.router}>
-                <Application />
-            </QueryContextProvider>)
+class App {
+  public render() {
+    const appContext = // ...some code
+
+    const { query } = appContext
+
+    return (
+      <QueryContextProvider initial={query}>
+        <Application />
+      </QueryContextProvider>
+      );
+  };
+}
+
+export default App;
 ```
 
 **with next**
 
 ```js
-/app.js
-import { nextWithQuery } from '@breadhead/use-query'
+// app.js
+import { nextWithQuery } from "@breadhead/use-query";
 
-export default nextWithQuery(Application)
-
+export default nextWithQuery(Application);
 ```
 
 #### in your component with query using
+
 ```js
-/componentWithQuery.js
-import { useQuery } from '@breadhead/use-query'
+// componentWithQuery.js
+import { useQuery } from "@breadhead/use-query";
 
-    const componentWithQuery = () => {
-        const {  query: { param } } = useQuery()
+const componentWithQuery = () => {
+  const {
+    query: { param }
+  } = useQuery();
 
-        ...some code
-    }
+  // ...some code
+};
 
+export default componentWithQuery;
 ```
 
 **in query-string:**
+
 ```
 http://your-url?param=
 ```
