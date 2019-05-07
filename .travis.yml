@@ -1,7 +1,7 @@
 language: node_js
 node_js:
-  - '8'
-  - '10'
+- '8'
+- '10'
 cache: yarn
 script: yarn ci
 deploy:
@@ -9,7 +9,7 @@ deploy:
   email: iwanttobealight@yandex.ru
   skip_cleanup: true
   api_key:
-    secure: 
+    secure: sa+//oVnCzFfsQV44Rkql/GNQppjoKTZrEDCdysRfo+1j21TKZ4fhCweUucNrsK5UimMf2xQq+lGUnbB1Ns4yrbZk1RL5UaJXrA6PiJ54zrkTjV5tgQ+SswgyWA+hWaqg/BpJE4Ay+DPDi0taclZ/Jkh55RbsPPJeBN4JM7Go3CBOZMLmmk4GLA02r/S7NoriuHFzEC7bj6v4iMWYJAYZGTtQmk2q26SIp7OC4bl/kQ8rBzeOJpZk2nmQzihVRen13jDvtYiaikVxjKfMNYM1MP4MOaRqa54AtFtxfIgE05ucqEFNmuE/4VGBoI220SoCuUAXN/qz8K3gjFVrtdQ0pr2BPha9dKi0i7xvmNHQWl/rq7iUbWWaQ/D1TrnhJMOpKuDmaW7Ra6DiIOgK/XbCxconnSNg2U2IPaFMMKUGt4Ul48R5Glg8cYOCbevrE2ZXFtGLso5vxmm/fgp2TjNZVYP6ThspNvXlNlS57W2GFAUEeylep86x9FsGutVGQGi3KcwytEFODS+JtfGTSG//1Mjjt8NIjEEwRFnErUKlD7xAymEnnMpt49cGHyAd9YiTAeUe1hpx7N3MgnORgSdl2KJ9QUP6GYF+gWQybKRPhKMOiP0bxTyo/1kz/LmQqsFmowZP9S4ZjV2FIz9qHaDesBwaN4lCo5nxD6e9IgO9wo=
   on:
     tags: true
     repo: breadhead/use-query

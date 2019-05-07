@@ -43,6 +43,6 @@
     "build": "tsc",
     "prepare": "install-self-peers -- --ignore-scripts && yarn build",
     "types": "tsc",
-    "ci": "yarn s lint"
+    "ci": "yarn s lint && yarn types && yarn test"
   }
 }
