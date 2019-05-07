@@ -1,6 +1,6 @@
 # use-query
 
-A react hook for easily synchronizing query string (http://your-url?yourParam=) with react context
+A react hook for easily synchronizing query string (http://your-url?yourParam=) with react context.
 Works with any client router through history API
 
 ## Installation
@@ -11,7 +11,7 @@ Works with any client router through history API
 
 #### first
 
-Wrap your App in QueryContextProvider and throw initial query:
+Wrap your App in QueryContextProvider and pass initial query:
 
 #### in App.js
 
@@ -35,7 +35,7 @@ class QueryContextApp {
 export default QueryContextApp;
 ```
 
-If your app builded with [next.js](https://nextjs.org/) you can use nextWithQuery [HOC](https://reactjs.org/docs/higher-order-components.html):
+If your app builded with [next.js](https://nextjs.org/) you can use nextWithQuery HOC:
 
 ```js
 // app.js
@@ -55,7 +55,7 @@ Now you can add useQuery hook to any component and recieve the query parameter v
 import { useQuery } from "@breadhead/use-query";
 
 const componentWithQuery = () => {
-  const param = useQuery();
+  const { param }  = useQuery();
 
   // ...some code
 };
@@ -68,11 +68,3 @@ export default componentWithQuery;
 ```
 http://your-url?param=
 ```
-
-## API
-
-| Name                 | Type          | Props                   | Returned values                                                                                           | Description                                                          |
-| -------------------- | ------------- | ----------------------- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| useQuery             | react hook    | -                       | param: name of parameter in query string (looks like `param=` in query string) | hook for work with query string                                      |
-| QueryContextProvider | react context | initial (router object) | -                                                                                                         | context provider that must be using at the top level of your app |
-| nextWithQuery        | react hoc     | -                       | -                                                                                                         | hoc for the [next.js](https://nextjs.org/) app                                                 |
