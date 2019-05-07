@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.2](https://github.com/breadhead/use-query/compare/v0.2.1...v0.2.2) (2019-05-07)
+
+
+### Bug Fixes
+
+* **query-context-provier:** fix path ([76cd60f](https://github.com/breadhead/use-query/commit/76cd60f))
+
+
+
 ## [0.2.1](https://github.com/breadhead/use-query/compare/v0.2.0...v0.2.1) (2019-05-07)
 
 
