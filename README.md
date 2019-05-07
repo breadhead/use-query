@@ -46,7 +46,7 @@ export default nextWithQuery(Application);
 
 #### second
 
-Now you can add useQuery hook to any component and recieve the query parameter value
+Now you can add useQuery hook to any component and receive the query parameter value
 
 #### in your component with query using
 
