@@ -1,7 +1,7 @@
 {
   "name": "@breadhead/use-query",
   "version": "0.2.2",
-  "main": "dist/",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/breadhead/use-query.git"
