@@ -3,6 +3,7 @@ import isEqual from 'lodash.isequal'
 import qs from 'qs'
 
 import { QueryContext } from './QueryContext'
+import { patchHistoryMethod } from 'helpers/patchHistoryMethod';
 
 interface Props {
   children: React.ReactNode
@@ -15,7 +16,12 @@ export const QueryContextProvider = ({ children, initial = {} }: Props) => {
 
   useEffect(() => {
     prevProps.current = initial
-  })
+  }, [initial])
+
+  useEffect(() => {
+    patchHistoryMethod('pushState')
+    patchHistoryMethod('replaceState')
+  }, [])
 
   useEffect(() => {
     const initialChanged = !isEqual(prevProps.current, initial)
