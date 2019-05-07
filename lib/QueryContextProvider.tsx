@@ -3,7 +3,7 @@ import isEqual from 'lodash.isequal'
 import qs from 'qs'
 
 import { QueryContext } from './QueryContext'
-import { patchHistoryMethod } from 'helpers/patchHistoryMethod';
+import { patchHistoryMethod } from './helpers/patchHistoryMethod';
 
 interface Props {
   children: React.ReactNode
