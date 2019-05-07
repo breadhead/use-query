@@ -1,10 +1,11 @@
+import * as React from 'react'
+
 import {
   AppComponentType,
   AppProps,
   DefaultAppIProps,
   NextAppContext,
 } from 'next/app'
-import * as React from 'react'
 import { QueryContextProvider } from '../QueryContextProvider'
 
 type NextProps = AppProps & DefaultAppIProps
