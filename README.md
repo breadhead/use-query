@@ -1,6 +1,6 @@
 # use-query
 
-A react hook for easily synchronizing query string (http://your-url?yourParam='someValue') with react context.
+A react hook for easily synchronizing query string (e.g. http://your-url?yourParam=someValue) with react context.
 Works with any client router through history API
 
 ## Installation
