@@ -8,7 +8,6 @@ Works with any client router through history API
 `yarn add @breadhead/use-query`
 
 ### Usage
-
 #### first
 
 Wrap your App in QueryContextProvider and pass initial query:
