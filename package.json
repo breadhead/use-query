@@ -1,0 +1,48 @@
+{
+  "name": "@breadhead/use-query",
+  "version": "0.0.0",
+  "main": "dist/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/breadhead/use-query.git"
+  },
+  "description": "React hook for easy working with query string",
+  "author": "Daria Moreno-Gogoleva <iwanttobealight@yandex.ru>",
+  "license": "MIT",
+  "devDependencies": {
+    "@solid-soda/scripts": "^1.6.3",
+    "@team-griffin/install-self-peers": "^1.1.1",
+    "@types/jest": "^24.0.11",
+    "@types/next": "^7.0.5",
+    "@types/react": "^16.8.13",
+    "jest": "^24.7.0",
+    "ts-jest": "^24.0.1",
+    "typescript": "^3.4.1"
+  },
+  "peerDependencies": {
+    "react": ">= 16.8",
+    "react-dom": ">= 16.8"
+  },
+  "dependencies": {
+    "lodash.isequal": "^4.5.0",
+    "lodash.mapvalues": "^4.6.0",
+    "qs": "^6.7.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn soda lint-staged",
+      "commit-msg": "yarn soda commitlint"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "jest",
+    "s": "yarn soda",
+    "build": "tsc",
+    "prepare": "install-self-peers -- --ignore-scripts && yarn build",
+    "types": "tsc",
+    "ci": "yarn s lint"
+  }
+}

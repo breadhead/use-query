@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - '8'
+  - '10'
+cache: yarn
+script: yarn ci
+deploy:
+  provider: npm
+  email: iwanttobealight@yandex.ru
+  skip_cleanup: true
+  api_key:
+    secure: 
+  on:
+    tags: true
+    repo: breadhead/use-query
