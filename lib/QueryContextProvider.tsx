@@ -1,9 +1,9 @@
-import React, { useCallback, useState, useEffect, useRef } from 'react'
+import React, { useCallback, useState, useEffect, useRef, useMemo } from 'react'
 import isEqual from 'lodash.isequal'
-import qs from 'qs'
 
 import { QueryContext } from './QueryContext'
-import { patchHistoryMethod } from './helpers/patchHistoryMethod';
+import { patchHistoryMethod } from './helpers/patchHistoryMethod'
+import { getClearQuery } from './helpers/getClearQuery'
 
 interface Props {
   children: React.ReactNode
@@ -11,12 +11,20 @@ interface Props {
 }
 
 export const QueryContextProvider = ({ children, initial = {} }: Props) => {
-  const [query, setQuery] = useState(initial)
-  const prevProps = useRef(initial)
+  const realInitial = useMemo(() => {
+    if (typeof initial === 'string') {
+      return getClearQuery(initial)
+    }
+
+    return initial || {}
+  }, [initial])
+
+  const [query, setQuery] = useState(realInitial)
+  const prevProps = useRef(realInitial)
 
   useEffect(() => {
-    prevProps.current = initial
-  }, [initial])
+    prevProps.current = realInitial
+  }, [realInitial])
 
   useEffect(() => {
     patchHistoryMethod('pushState')
@@ -24,18 +32,14 @@ export const QueryContextProvider = ({ children, initial = {} }: Props) => {
   }, [])
 
   useEffect(() => {
-    const initialChanged = !isEqual(prevProps.current, initial)
+    const initialChanged = !isEqual(prevProps.current, realInitial)
     if (initialChanged) {
-      setQuery(initial)
+      setQuery(realInitial)
     }
-  }, [initial])
+  }, [realInitial])
 
   const onRouteChange = useCallback(
-    ({ url }: { url: string }) => {
-      const [, queryString] = url.split('?')
-      const parsedQuery = qs.parse(queryString)
-      setQuery(parsedQuery)
-    },
+    ({ url }: { url: string }) => setQuery(getClearQuery(url)),
     [setQuery],
   )
 

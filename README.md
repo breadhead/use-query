@@ -1,69 +1,56 @@
 # use-query
 
 A react hook for easily synchronizing query string (e.g. http://your-url?yourParam=someValue) with react context.
-Works with any client router through history API
+Works with any client router through history API.
 
 ## Installation
 
 `yarn add @breadhead/use-query`
 
 ### Usage
-#### first
 
-Wrap your App in QueryContextProvider and pass initial query:
+It just works.
 
-#### in App.js
+```js
+// Navigation.jsx
+import { useQuery } from "@breadhead/use-query";
+
+export const Navigation = () => {
+  const { param }  = useQuery();
+
+  // ...some code
+
+  return <p>{param}</p>
+};
+```
+
+If you want use it with SSR, just add `QueryContextProvider`
 
 ```js
 // QueryContextApp.js
 import { QueryContextProvider } from "@breadhead/use-query";
 import App from './App';
 
-class QueryContextApp {
+export class QueryContextApp {
   public render() {
-    const appContext = // ...some code
+    const query = ... // get query from request
 
     return (
-      <QueryContextProvider initial={appContext.query}>
+      <QueryContextProvider initial={query}>
         <App />
       </QueryContextProvider>
       );
   };
 }
-
-export default QueryContextApp;
 ```
 
-If your app builded with [next.js](https://nextjs.org/) you can use nextWithQuery HOC:
+#### Next.js
+
+If your app builded with [Next.js](https://nextjs.org/) you can use built-in `nextWithQuery` HOC:
 
 ```js
-// app.js
+// _app.js
 import { nextWithQuery } from "@breadhead/use-query";
 
 export default nextWithQuery(Application);
-```
-
-#### second
-
-Now you can add useQuery hook to any component and receive the query parameter value
-
-#### in your component with query using
-
-```js
-// componentWithQuery.js
-import { useQuery } from "@breadhead/use-query";
-
-const componentWithQuery = () => {
-  const { param }  = useQuery();
-
-  // ...some code
-};
-
-export default componentWithQuery;
-```
-
-**in query-string:**
-
-```
-http://your-url?param=
 ```
