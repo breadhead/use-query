@@ -11,11 +11,13 @@ interface Props {
 }
 
 export const QueryContextProvider = ({ children, initial = {} }: Props) => {
-  const realInitial = useMemo(
-    () =>
-      typeof initial === 'string' ? getClearQuery(initial) : initial || {},
-    [initial],
-  )
+  const realInitial = useMemo(() => {
+    if (typeof initial === 'string') {
+      return getClearQuery(initial)
+    }
+
+    return initial || {}
+  }, [initial])
 
   const [query, setQuery] = useState(realInitial)
   const prevProps = useRef(realInitial)
