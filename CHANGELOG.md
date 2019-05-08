@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.0.0](https://github.com/breadhead/use-query/compare/v0.4.2...v1.0.0) (2019-05-08)
+
+
+### Documentation
+
+* **readme:** remove extra dot ([af5441f](https://github.com/breadhead/use-query/commit/af5441f)), closes [#3](https://github.com/breadhead/use-query/issues/3)
+
+
+### BREAKING CHANGES
+
+* **readme:** release 1.0.0
+
+
+
 ## [0.4.2](https://github.com/breadhead/use-query/compare/v0.4.1...v0.4.2) (2019-05-08)
 
 
