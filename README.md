@@ -9,7 +9,7 @@ Works with any client router through history API.
 
 ### Usage
 
-It just works.
+It just works
 
 ```js
 // Navigation.jsx
