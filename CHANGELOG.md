@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.4.0](https://github.com/breadhead/use-query/compare/v0.3.0...v0.4.0) (2019-05-08)
+
+
+### Features
+
+* **query-context:** changed react-conext to react-shallow-context ([c63e14b](https://github.com/breadhead/use-query/commit/c63e14b))
+
+
+
 # [0.3.0](https://github.com/breadhead/use-query/compare/v0.2.2...v0.3.0) (2019-05-08)
 
 
